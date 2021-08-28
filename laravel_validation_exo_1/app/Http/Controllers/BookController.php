@@ -8,11 +8,14 @@ class BookController extends Controller
 {
     public function index(){
         $datas = Book::all();
-        return view('pages.book', compact('datas'));
+        $book = new Book;
+        $totNote = $book->sum('note');
+        return view('pages.book', compact('datas','totNote'));
     }
 
 
     public function create(){
+
         return view('pages.newBook');
     }
 

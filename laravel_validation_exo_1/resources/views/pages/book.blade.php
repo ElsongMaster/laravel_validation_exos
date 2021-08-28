@@ -11,8 +11,9 @@
   <table class="table">
     <thead>
       <tr>
+        <th scope="col">Id</th>
         <th scope="col">Nom</th>
-        <th scope="col">text_auteur</th>
+        <th scope="col">note</th>
         <th scope="col">Show</th>
   
       </tr>
@@ -22,11 +23,16 @@
         <tr>
           <th scope="row">{{$data->id}}</th>
           <td>{{$data->nom}}</td>
+          <td>{{$data->note}}</td>
           <td><a href="{{route('show',$data->id)}}" class="btn btn-info">SHOW</a></td>
         </tr>
         @endforeach
-     
+        <td></td>
+        <td><b>Total:</b></td>
+        <td ><b>{{$totNote}}</b></td>
+        <td></td>
     </tbody>
+
   </table> 
   
       <form action="{{route('deleteAll')}}" method="POST">
